@@ -1,0 +1,3 @@
+mysql_install_db
+
+mysql_secure_installation

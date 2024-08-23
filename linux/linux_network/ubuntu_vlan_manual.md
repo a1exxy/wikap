@@ -1,0 +1,1 @@
+ip link add link eno1 name eno1.1040 type vlan id 1040

@@ -4,7 +4,7 @@
 
 cat /etc/docker/daemon.json
 {
-       "registry-mirrors": ["https://repo.maya:1112/repository/docker/"]
+       "registry-mirrors": ["https://repo.domain:1112/repository/docker/"]
 }
 
 Проверка docker info
