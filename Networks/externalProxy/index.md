@@ -7,7 +7,8 @@ lxc launch ubuntu:24.04 externalProxy
 
 ### Установка постоянного ip адреса для контейнера
 ```bash
-sudo lxc config device override externalProxy eth0 ipv4.address=10.2.217.254
+newIp=`ip -o -4 addr show $(lxc profile show default | grep network | awk '{print $2}') | awk '{print $4}' | cut -d/ -f1 | cut -d\. -f1,2,3 | xargs -I{} echo "{}.254"`
+sudo lxc config device override externalProxy eth0 ipv4.address=$newIp
 ```
 
 ### Подключение к контейнеру
