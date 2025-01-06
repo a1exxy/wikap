@@ -9,8 +9,12 @@
     Проверка соответствия ключа сертификату:
 
 
-Отпечатки сертификатов:
+**Отпечатки сертификатов:**
 
     openssl x509 -in cert.crt -noout -fingerprint
 
     openssl x509 -in cert.crt -noout -fingerprint -sha256
+
+**Создание самоподписанного сертификата**
+    
+    openssl req -x509 -newkey rsa:2048 -keyout selfsign.key -out selfsign.crt -days 365 -nodes -subj "/CN=example.com"
